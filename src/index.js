@@ -742,10 +742,6 @@ const config = [
     ],
     rules: {
       /**
-       * Unit tests sometimes use a standalone statement like "new Thing(123);" to test a constructor.
-       */
-      'no-new': 'off',
-      /**
        * Jest's mocking API is designed in a way that produces compositional data types that often have
        * no concise description.  Since test code does not ship, and typically does not introduce new
        * concepts or algorithms, the usual arguments for prioritizing readability over writability can be
@@ -764,14 +760,18 @@ const config = [
           variableDeclarationIgnoreFunction: true,
         },
       ],
+      /**
+       * Unit tests sometimes use a standalone statement like "new Thing(123);" to test a constructor.
+       */
+      'no-new': 'off',
     },
   },
   /** Node */
   {
-    files: ['.eslintrc.cjs'],
     env: {
       node: true,
     },
+    files: ['.eslintrc.cjs'],
   },
   /** Must go last */
   eslintPluginPrettierRecommended,
