@@ -1,3 +1,4 @@
 node_modules
 dist
+.vscode
 under-io-eslint*.tgz
